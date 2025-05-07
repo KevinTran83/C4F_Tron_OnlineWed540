@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turn : MonoBehaviour
 {
     public float speed = 180;
+    public string player = "Player 1";
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Turn : MonoBehaviour
     void Update()
     {
         transform.Rotate( 0,
-                          Input.GetAxis("Horizontal") * speed * Time.deltaTime,
+                          Input.GetAxis(player) * speed * Time.deltaTime,
                           0
                         );
     }
