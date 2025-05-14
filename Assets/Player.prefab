@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positions: []
+  interval: 0.2
+  length: 50
 --- !u!1 &7233192984797180570
 GameObject:
   m_ObjectHideFlags: 0
