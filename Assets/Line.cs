@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events; /// new
 
 public class Line : MonoBehaviour
 {
+    public UnityEvent onLose; /// new
+
     public List<Vector3> positions;
     private LineRenderer rend;
     public float interval = 0.2f;
@@ -43,7 +46,7 @@ public class Line : MonoBehaviour
 
             RaycastHit hit;
             if (Physics.Raycast(positions[i], vect, out hit, vect.magnitude))
-                Destroy(hit.transform.gameObject);
+                onLose.Invoke(); /// New
         }
     }
 }
