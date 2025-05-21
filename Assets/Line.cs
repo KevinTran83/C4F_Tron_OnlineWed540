@@ -46,7 +46,10 @@ public class Line : MonoBehaviour
 
             RaycastHit hit;
             if (Physics.Raycast(positions[i], vect, out hit, vect.magnitude))
-                onLose.Invoke(); /// New
+            {
+                Line other = hit.transform.GetComponent<Line>();
+                if (other) other.onLose.Invoke();
+            }
         }
     }
 }
